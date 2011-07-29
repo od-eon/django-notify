@@ -1,0 +1,27 @@
+{% if notifications %}
+<div class="black-strip"> <h2>Notifications</h2> </div>
+<ul id="notifications">
+    {% for notif in notifications %}
+        {% ifequal notif.type 'invited_email' %}
+            <li class="invited_email"> {{ notif.name }} </li>
+        {% endifequal %}
+    {% endfor %}
+
+
+
+    {% for notif in notifications %}
+        {% ifnotequal notif.type 'invited_email' %}
+        <li>
+            <img src="{{ MEDIA_URL }}app/notify/img/transparent.png" class="notif {{ notif.type }}" />
+            {% if notif.link %}
+                <a href="{{ notif.link }}" class="small-text">{{ notif.name }}</a>
+            {% else %}
+                {{ notif.name }}
+            {% endif %}
+        </li>
+        {% endifnotequal %}
+
+    {% endfor %}
+</ul>
+{% endif %}
+
