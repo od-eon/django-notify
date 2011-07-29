@@ -1,3 +1,6 @@
 A full-featured email notification django app that supports unicode HTML emails.
 
-It depends on git@github.com:od-eon/django-textprocessors.git for html to plaintext conversion.
+DEPENDENCIES
+It depends on 
+git@github.com:od-eon/django-textprocessors.git for html to plaintext conversion.
+git@github.com:od-eon/django-massmail.git for queueing of email notifications if the email is being sent to a list of users.
